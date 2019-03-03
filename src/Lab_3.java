@@ -5,17 +5,18 @@ public class Lab_3 {
     public static void main(String[] args) {
 
         StringBuffer text = new StringBuffer("Hello it is lucky. I am leader. It is successful! Some words without el");
-        char your_char = 'l';
+        char your_char = 's';
         System.out.println("Text: \n" + text);
 
-        StringBuffer[][] string_with_count;
-        StringBuffer[] arr_words = text.split("[,;:.!?\\s]+");
-        String empty = "";
-        StringBuffer new_str = new StringBuffer(empty);
+        String[] arr_words = text.toString().split("[,;:.!?\\s]+");
+        //StringBuffer[] buff_words = arr_words.toString();
 
-        for (StringBuffer word : arr_words) {
+        String[] string_with_count = new String[arr_words.length];
+        int word_num = 0;
 
+        for (String word : arr_words) {
             int count = 0;
+            //int count = StringUtils.countMatches("a.b.c.d", ".");
 
             char[] arr_chars = word.toCharArray();
             for (char chars : arr_chars) {
@@ -23,19 +24,15 @@ public class Lab_3 {
                     count++;
                 }
             }
-
-            string_with_count = count + " : " + word;
-            new_str.append(string_with_count);
-            new_str.append("-");
+            string_with_count[word_num] = (count + " : " + word);
+            word_num++;
         }
 
         System.out.println("Sorted by " + your_char + ":");
-        String[] new_str_2 = new_str.toString().split("-");
-        Arrays.sort(new_str_2, Collections.reverseOrder());
-        for (String word : new_str_2) {
-            System.out.print(word + "    ");
+        Arrays.sort(string_with_count, Collections.reverseOrder());
+        for (String word : string_with_count) {
+            System.out.println(word);
         }
-
 
     }
 }
