@@ -31,7 +31,7 @@ public class Lab_3 {
         System.out.println("Sorted by " + your_char + ":");
         Arrays.sort(string_with_count, Collections.reverseOrder());
         for (String word : string_with_count) {
-            System.out.println(word);
+            System.out.println(word.substring(4));
         }
 
     }
