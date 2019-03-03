@@ -11,7 +11,7 @@ public class Lab_2 {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 //matrixB[i][j] = (short)(random.nextInt(65536) - 32768);
-                matrixB[i][j] = (short)random.nextInt(10);
+                matrixB[i][j] = (short) random.nextInt(10);
             }
         }
 
@@ -27,9 +27,7 @@ public class Lab_2 {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 matrixC[j][i] = matrixB[i][j];
-
             }
-
         }
 
         System.out.println();
@@ -47,7 +45,7 @@ public class Lab_2 {
             temp = matrixC[0][j];
 
             for (int i = 1; i < n; i++) {
-                if (matrixC[i][j] < temp){
+                if (matrixC[i][j] < temp) {
                     temp = matrixC[i][j];
                 }
             }
